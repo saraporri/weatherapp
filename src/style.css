@@ -1,3 +1,12 @@
+.container-wrapper {
+  max-width: 600px;
+  margin: 20px auto;
+}
+.container {
+  padding: 18px;
+  border: 2px;
+}
+
 .card-title {
   font-size: 70px;
   font-family: "Cookie", cursive;
@@ -27,6 +36,5 @@ h2 {
 }
 footer {
   font-size: 12px;
-  margin-top: 50px;
-  margin-left: 200px;
+  text-align: right;
 }

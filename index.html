@@ -25,73 +25,76 @@
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="card" style="width: 18rem">
-        <div class="card-body">
-          <h1 class="card-title" id="main-city">Rome</h1>
-          <img src="img/rome.jpg" class="card-img-top" alt="sunny-rome" />
-          <div class="row">
-            <div class="col-md-12">
-              <li id="today">Monday 11.30am</li>
-              <li id="sky-look">cloudy</li>
-            </div>
-          </div>
-          <h2>
-            Currently
-            <div class="current-temp" id="current-temp">29°</div>
-            <a href="#" id="celsius">C</a> | <a href="#" id="fahrenheit">F</a>
-          </h2>
-          <form id="enter-city">
-            <input
-              type="text"
-              placeholder="Enter your city..."
-              class="enter-city"
-              autocomplete="off"
-              autofocus="on"
-              id="load-city"
-            />
-            <input type="submit" value="Search" />
-            <button id="current-location">Current</button>
-          </form>
-        </div>
-        <div class="container text-center">
-          <div class="row align-items-center">
+    <div class="container-wrapper">
+      <div class="container">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h1 class="card-title" id="main-city">Rome</h1>
+            <img src="img/rome.jpg" class="card-img-top" alt="sunny-rome" />
             <div class="row">
-              <div class="col">
-                <span class="material-symbols-outlined"> sunny </span>
-              </div>
-              <div class="col">
-                <span class="material-symbols-outlined"> sunny </span>
-              </div>
-              <div class="col">
-                <span class="material-symbols-outlined"> rainy </span>
-              </div>
-
-              <div class="col">
-                <span class="material-symbols-outlined">
-                  partly_cloudy_day
-                </span>
-              </div>
-              <div class="col">
-                <span class="material-symbols-outlined"> sunny </span>
+              <div class="col-md-12">
+                <li id="today">Monday 11.30am</li>
+                <li id="sky-look">cloudy</li>
               </div>
             </div>
+            <h2>
+              Currently
+              <div class="current-temp" id="current-temp">29°</div>
+              <a href="#" id="celsius">C</a> | <a href="#" id="fahrenheit">F</a>
+            </h2>
+            <form id="enter-city">
+              <input
+                type="text"
+                placeholder="Enter your city..."
+                class="enter-city"
+                autocomplete="off"
+                autofocus="on"
+                id="load-city"
+              />
+              <input type="submit" value="Search" />
+              <button id="current-location">Current</button>
+            </form>
           </div>
-          <div class="row row-cols-auto">
-            <div class="col">Tue</div>
-            <div class="col">Wed</div>
-            <div class="col">Thu</div>
-            <div class="col">Fri</div>
-            <div class="col">Sat</div>
+          <div class="container text-center">
+            <div class="row align-items-center">
+              <div class="row">
+                <div class="col">
+                  <span class="material-symbols-outlined"> sunny </span>
+                </div>
+                <div class="col">
+                  <span class="material-symbols-outlined"> sunny </span>
+                </div>
+                <div class="col">
+                  <span class="material-symbols-outlined"> rainy </span>
+                </div>
+
+                <div class="col">
+                  <span class="material-symbols-outlined">
+                    partly_cloudy_day
+                  </span>
+                </div>
+                <div class="col">
+                  <span class="material-symbols-outlined"> sunny </span>
+                </div>
+              </div>
+            </div>
+            <div class="row row-cols-auto">
+              <div class="col">Tue</div>
+              <div class="col">Wed</div>
+              <div class="col">Thu</div>
+              <div class="col">Fri</div>
+              <div class="col">Sat</div>
+            </div>
           </div>
+
+          <footer>
+            <a href="https://github.com/saraporri/weatherapp" target="_blank"
+              >Open-source code</a
+            >, by Sara Porricino
+          </footer>
         </div>
       </div>
     </div>
-    <footer>
-      <a href="https://github.com/saraporri/weatherapp" target="_blank"
-        >Open-source code</a
-      >, by Sara Porricino
-    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>

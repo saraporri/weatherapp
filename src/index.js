@@ -43,20 +43,20 @@ searchForm.addEventListener("submit", enterCity);
 
 function showTemperature(response) {
   let mainCity = document.querySelector("#main-city");
-  let cityName = response.data.name;
+  let cityName = response.data.city;
   mainCity.innerHTML = `${cityName}`;
   let temp = document.querySelector("#current-temp");
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   temp.innerHTML = `${temperature}°C`;
   let skyCondition = document.querySelector("#sky-look");
-  let skyLook = response.data.weather[0].description;
+  let skyLook = response.data.condition.description;
   skyCondition.innerHTML = `${skyLook}`;
 }
 function currentPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let apiKey = "8b07dt8e17fee9f438eo54a03e745179";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 function getCurrentPosition(event) {
@@ -71,10 +71,9 @@ function searchNewCity(event) {
   event.preventDefault();
 
   let city = document.querySelector("#load-city").value;
-  let apiKey = "bc2cd97eaa209e7d22d8f3c84081655f";
+  let apiKey = "8b07dt8e17fee9f438eo54a03e745179";
   let units = "metric";
-  let apiRoot = "https://api.openweathermap.org/data/2.5/weather?";
-  let apiUrl = `${apiRoot}q=${city}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -82,10 +81,9 @@ let searchCity = document.querySelector("#enter-city");
 searchCity.addEventListener("submit", searchNewCity);
 
 function defaultCity() {
-  let apiKey = "1ee4264117b73d2263eecd562f31ef5c";
-  let apiRoot = "https://api.openweathermap.org/data/2.5/weather?";
-  let units = "metric";
-  let apiUrl = `${apiRoot}q=Rome&appid=${apiKey}&units=${units}`;
+  let apiKey = "8b07dt8e17fee9f438eo54a03e745179";
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=rome&key=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 

@@ -15,6 +15,7 @@ h2,
 .row,
 .col {
   font-family: "PT Serif", serif;
+  text-transform: capitalize;
 }
 .row {
   text-align: right;

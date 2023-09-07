@@ -20,6 +20,8 @@ function changeToCelsius(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${Math.round(celsiusTemp)}${degree}${"C"}`;
+  changeToCels.classList.add("active");
+  changeToFahr.classList.remove("active");
 }
 let changeToCels = document.querySelector("#celsius");
 changeToCels.addEventListener("click", changeToCelsius);
@@ -30,6 +32,9 @@ function changeToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let currentTemp = document.querySelector("#current-temp");
+  changeToCels.classList.remove("active");
+  changeToFahr.classList.add("active");
+
   currentTemp.innerHTML = `${Math.round(fahrenheitTemp)}${degree}${"F"}`;
 }
 let changeToFahr = document.querySelector("#fahrenheit");

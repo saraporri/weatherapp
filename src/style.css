@@ -40,6 +40,14 @@ h2,
 .main-icon {
   float: right;
 }
+.units .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
+}
+.units .active:hover {
+  text-decoration: none;
+}
 h2 {
   font-size: 15px;
   text-align: center;

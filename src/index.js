@@ -51,6 +51,11 @@ function showTemperature(response) {
   let skyCondition = document.querySelector("#sky-look");
   let skyLook = response.data.condition.description;
   skyCondition.innerHTML = `${skyLook}`;
+  let mainIcon = document.querySelector("#main-icon");
+  mainIcon.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
 function currentPosition(position) {
   let latitude = position.coords.latitude;

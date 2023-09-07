@@ -7,9 +7,11 @@
   border: 2px;
 }
 
-.card-title {
+.main-city {
   font-size: 70px;
   font-family: "Cookie", cursive;
+  display: inline-block;
+  margin-bottom: 0;
 }
 h2,
 .row,

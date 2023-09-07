@@ -19,15 +19,18 @@ currentDay.innerHTML = `${today} <br> ${hour}.${minutes}`;
 function changeToCelsius(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = "19°";
+  currentTemp.innerHTML = `${Math.round(celsiusTemp)}${degree}${"C"}`;
 }
 let changeToCels = document.querySelector("#celsius");
 changeToCels.addEventListener("click", changeToCelsius);
+let celsiusTemp = null;
+let degree = "°";
 
 function changeToFahrenheit(event) {
   event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = "66°";
+  currentTemp.innerHTML = `${Math.round(fahrenheitTemp)}${degree}${"F"}`;
 }
 let changeToFahr = document.querySelector("#fahrenheit");
 changeToFahr.addEventListener("click", changeToFahrenheit);
@@ -56,6 +59,7 @@ function showTemperature(response) {
     "src",
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  celsiusTemp = response.data.temperature.current;
 }
 function currentPosition(position) {
   let latitude = position.coords.latitude;

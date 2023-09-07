@@ -6,6 +6,10 @@
   padding: 18px;
   border: 2px;
 }
+.card {
+  display: flex;
+  align-items: center;
+}
 
 .main-city {
   font-size: 70px;
@@ -25,6 +29,9 @@ h2,
 }
 .row ::first-letter {
   text-transform: capitalize;
+}
+.main-icon {
+  float: right;
 }
 h2 {
   font-size: 15px;

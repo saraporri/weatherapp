@@ -9,6 +9,13 @@
 .card {
   display: flex;
   align-items: center;
+  background: radial-gradient(
+    345px at 3.1% 89.3%,
+    rgba(254, 223, 45, 0.46) 0%,
+    rgba(254, 139, 45, 0.46) 31.9%,
+    rgba(255, 24, 220, 0.46) 62%,
+    rgba(24, 145, 255, 0.46) 85.8%
+  );
 }
 
 .main-city {

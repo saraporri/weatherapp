@@ -71,11 +71,11 @@ footer {
 .weather-forecast-date {
   font-weight: bolder;
   font-size: 13px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 .weather-forecast-temp {
   font-size: 13px;
 }
 .weather-forecast-min-temp {
-  opacity: 0.5;
+  opacity: 0.8;
 }

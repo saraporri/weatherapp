@@ -65,6 +65,8 @@ function showTemperature(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   celsiusTemp = response.data.temperature.current;
+
+  getForecast(response.data.coordinates);
 }
 function currentPosition(position) {
   let latitude = position.coords.latitude;
@@ -102,6 +104,13 @@ function defaultCity() {
 }
 
 defaultCity();
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8b07dt8e17fee9f438eo54a03e745179";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayForecast() {
   let forecast = document.querySelector("#forecast");

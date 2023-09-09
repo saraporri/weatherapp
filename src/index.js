@@ -1,20 +1,33 @@
-let now = new Date();
-now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-let hour = now.getHours();
-let minutes = now.getMinutes();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wedsneday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let today = days[now.getDay()];
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wedsneday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let today = days[now.getDay()];
 
-let currentDay = document.querySelector("#today");
-currentDay.innerHTML = `${today} <br> ${hour}.${minutes}`;
+  let currentDay = document.querySelector("#today");
+  currentDay.innerHTML = `${today} <br> ${hour}.${minutes}`;
+}
+function forecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
 function changeToCelsius(event) {
   event.preventDefault();
@@ -112,30 +125,39 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let dailyForecast = response.data.daily;
   let forecast = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (days) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
               <div class="col-2">
-                <div class="weather-forecast-date">${days}</div>
+                <div class="weather-forecast-date">${forecastDate(
+                  forecastDay.time
+                )}</div>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
                   alt=""
                   width="42"
                 />
                 <div class="weather-forecast-temp">
-                  <span class="weather-forecast-min-temp">12</span>
-                  <span class="weather-forecast-max-temp">18</span>
+                  <span class="weather-forecast-min-temp">${Math.round(
+                    forecastDay.temperature.minimum
+                  )}</span>
+                  <span class="weather-forecast-max-temp">${Math.round(
+                    forecastDay.temperature.maximum
+                  )}</span>
                 </div>
               </div>
             `;
+    }
   });
-  forecastHTML = forecastHTML + `</div>`;
-
   forecast.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }

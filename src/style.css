@@ -68,3 +68,14 @@ footer {
   font-size: 12px;
   text-align: right;
 }
+.weather-forecast-date {
+  font-weight: bolder;
+  font-size: 13px;
+  opacity: 0.5;
+}
+.weather-forecast-temp {
+  font-size: 13px;
+}
+.weather-forecast-min-temp {
+  opacity: 0.5;
+}

@@ -29,33 +29,6 @@
       <div class="container">
         <div class="card" style="width: 400px">
           <div class="card-body">
-            <div class="col-md-12">
-              <p class="main-city" id="main-city">Rome</p>
-              <img src="" class="main-icon" id="main-icon" />
-            </div>
-            <img
-              src="img/rome.jpg"
-              id="cityImg"
-              class="card-img-top"
-              alt="sunny-rome"
-            />
-            <div class="weather-forecast" id="forecast"></div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <li id="today">Monday 11.30am</li>
-                <li id="sky-look">cloudy</li>
-              </div>
-            </div>
-            <h2>
-              Currently
-              <div class="current-temp" id="current-temp">29°</div>
-
-              <div class="units">
-                <a href="#" id="celsius" class="active">C</a> |
-                <a href="#" id="fahrenheit">F</a>
-              </div>
-            </h2>
             <form id="enter-city" class="enter-city-form">
               <input
                 type="text"
@@ -70,6 +43,35 @@
                 Current
               </button>
             </form>
+
+            <div class="col-md-12">
+              <p class="main-city" id="main-city">Rome</p>
+              <img src="" class="main-icon" id="main-icon" />
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <li id="today">Monday 11.30am</li>
+                <li id="sky-look">cloudy</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </div>
+            </div>
+            <img
+              src="img/rome.jpg"
+              id="cityImg"
+              class="card-img-top"
+              alt="sunny-rome"
+            />
+            <h2>
+              Currently
+              <div class="current-temp" id="current-temp">29°</div>
+
+              <div class="units">
+                <a href="#" id="celsius" class="active">C</a> |
+                <a href="#" id="fahrenheit">F</a>
+              </div>
+            </h2>
+            <div class="weather-forecast" id="forecast"></div>
           </div>
           <footer>
             <a href="https://github.com/saraporri/weatherapp" target="_blank"

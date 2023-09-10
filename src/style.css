@@ -54,7 +54,7 @@ h2 {
   margin-top: 10px;
 }
 .current-temp {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 900;
 }
 .btn {
@@ -70,12 +70,15 @@ footer {
 }
 .weather-forecast-date {
   font-weight: bolder;
-  font-size: 13px;
+  font-size: 15px;
   opacity: 0.8;
 }
 .weather-forecast-temp {
-  font-size: 13px;
+  font-size: 15px;
 }
 .weather-forecast-min-temp {
   opacity: 0.8;
+}
+.weather-forecast {
+  display: block;
 }

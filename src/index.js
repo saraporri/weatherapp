@@ -69,6 +69,11 @@ function showTemperature(response) {
   let temp = document.querySelector("#current-temp");
   let temperature = Math.round(response.data.temperature.current);
   temp.innerHTML = `${temperature}°C`;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.temperature.humidity;
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = Math.round(response.data.wind.speed * 3.6);
+
   let skyCondition = document.querySelector("#sky-look");
   let skyLook = response.data.condition.description;
   skyCondition.innerHTML = `${skyLook}`;
@@ -78,7 +83,6 @@ function showTemperature(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   celsiusTemp = response.data.temperature.current;
-
   getForecast(response.data.coordinates);
 }
 function currentPosition(position) {
@@ -144,7 +148,7 @@ function displayForecast(response) {
                     forecastDay.condition.icon
                   }.png"
                   alt=""
-                  width="42"
+                  width="70"
                 />
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-min-temp">${Math.round(

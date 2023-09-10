@@ -1,31 +1,30 @@
-function formatDate(timestamp) {
-  let now = new Date(timestamp);
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wedsneday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let today = days[now.getDay()];
-
-  let currentDay = document.querySelector("#today");
-  currentDay.innerHTML = `${today} <br> ${hour}.${minutes}`;
+let now = new Date();
+now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
 }
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wedsneday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let today = days[now.getDay()];
+
+let currentDay = document.querySelector("#today");
+currentDay.innerHTML = `${today} <br> ${hour}.${minutes}`;
 function forecastDate(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   return days[day];
 }
 

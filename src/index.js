@@ -135,7 +135,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   dailyForecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
@@ -148,7 +148,7 @@ function displayForecast(response) {
                     forecastDay.condition.icon
                   }.png"
                   alt=""
-                  width="70"
+                  width="45"
                 />
                 <div class="weather-forecast-temp">
                   <span class="weather-forecast-min-temp">${Math.round(

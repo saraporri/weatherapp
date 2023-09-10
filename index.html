@@ -43,25 +43,20 @@
                 Current
               </button>
             </form>
-
-            <div class="col-md-12">
-              <p class="main-city" id="main-city">Rome</p>
-              <img src="" class="main-icon" id="main-icon" />
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <li id="today">Monday 11.30am</li>
-                <li id="sky-look">cloudy</li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
+            <div class="container">
+              <div class="col-md-12">
+                <p class="main-city" id="main-city">Rome</p>
+                <img src="" class="main-icon" id="main-icon" />
+              </div>
+              <div class="row justify-content-md-center">
+                <div class="datesky col-lg-2">
+                  <li id="today">Monday 11.30am</li>
+                  <strong><li id="sky-look"></li></strong>
+                </div>
+                <div class="col-md-auto"></div>
               </div>
             </div>
-            <img
-              src="img/rome.jpg"
-              id="cityImg"
-              class="card-img-top"
-              alt="sunny-rome"
-            />
+
             <h2>
               Currently
               <div class="current-temp" id="current-temp">29°</div>
@@ -69,6 +64,15 @@
               <div class="units">
                 <a href="#" id="celsius" class="active">C</a> |
                 <a href="#" id="fahrenheit">F</a>
+              </div>
+
+              <div class="humiwind col-lg-2">
+                <li>
+                  Humidity: <strong><span id="humidity"></span>%</strong>
+                </li>
+                <li>
+                  Wind: <strong><span id="wind"></span> km/h</strong>
+                </li>
               </div>
             </h2>
             <div class="weather-forecast" id="forecast"></div>
